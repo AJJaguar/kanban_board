@@ -6,13 +6,13 @@ class TaskEntity extends Equatable {
     required this.title,
     required this.description,
     required this.seconds,
-    required this.createdAt,
+    this.completedAt,
   });
 
   final String title;
   final String description;
   final int seconds;
-  final DateTime createdAt;
+  final DateTime? completedAt;
   final TaskStatus status;
 
   @override
@@ -22,15 +22,16 @@ class TaskEntity extends Equatable {
   TaskEntity copyWith({
     String? title,
     String? description,
-    int? time,
+    int? seconds,
     TaskStatus? status,
+    DateTime? completedAt,
   }) =>
       TaskEntity(
-        createdAt: createdAt,
         description: description ?? this.description,
         status: status ?? this.status,
-        seconds: time ?? this.seconds,
+        seconds: seconds ?? this.seconds,
         title: title ?? this.title,
+        completedAt: completedAt,
       );
 
   @override
@@ -38,7 +39,7 @@ class TaskEntity extends Equatable {
         title,
         description,
         seconds,
-        createdAt,
+        completedAt,
         status,
       ];
 }

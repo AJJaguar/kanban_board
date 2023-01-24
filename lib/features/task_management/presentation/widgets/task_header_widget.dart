@@ -23,9 +23,11 @@ class TaskHeader extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             title,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 37,

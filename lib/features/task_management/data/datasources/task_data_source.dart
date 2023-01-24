@@ -24,7 +24,6 @@ class LocalTaskDataSourceImpl implements TaskDataSource {
         description: param.description,
         seconds: 0,
         status: TaskStatus.todo,
-        createdAt: DateTime.now(),
       ),
     );
   }

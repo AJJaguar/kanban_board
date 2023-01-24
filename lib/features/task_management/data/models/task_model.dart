@@ -5,7 +5,7 @@ class TaskModel extends TaskEntity {
     required super.title,
     required super.description,
     required super.seconds,
-    required super.createdAt,
+    required super.completedAt,
     required super.status,
   });
 }

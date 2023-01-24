@@ -8,13 +8,13 @@ class TaskTile extends StatefulWidget {
   const TaskTile({
     super.key,
     required this.taskTitle,
-    required this.taskSubTitle,
+    required this.description,
     required this.timer,
     required this.status,
     this.onTick,
   });
   final String taskTitle;
-  final String taskSubTitle;
+  final String description;
   final String timer;
   final TaskStatus status;
   final VoidCallback? onTick;
@@ -39,22 +39,13 @@ class _TaskTileState extends State<TaskTile> {
 
   @override
   void initState() {
-    // _timer = Timer.periodic(
-    //   const Duration(milliseconds: 1000),
-    //   (timer) {
-    //     print('here ${timer.tick}');
-    //     if (widget.status == TaskStatus.inProgress) {
-    //       widget.onTick?.call();
-    //     }
-    //   },
-    // );
     _initTimer();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       width: 340,
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.all(20),
@@ -62,24 +53,41 @@ class _TaskTileState extends State<TaskTile> {
         borderRadius: BorderRadius.circular(8),
         color: _getColorFromStatus,
       ),
+      duration: Duration(milliseconds: 1000),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+            'Title',
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.6),
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Text(
             widget.taskTitle,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 12),
           Text(
-            widget.taskSubTitle,
+            'Description',
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.6),
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Text(
+            widget.description,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 18,
               fontWeight: FontWeight.w400,
             ),
           ),
