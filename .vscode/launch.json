@@ -1,0 +1,43 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+    
+
+//     {
+//       "name": "C/C++ Runner: Debug Session",
+//       "type": "lldb",
+//       "request": "launch",
+//       "args": [],
+//       "cwd": "/Users/hussein/Documents/GitHub/innoscripta_task/lib/features/task_management/presentation/bloc",
+//       "program": "/Users/hussein/Documents/GitHub/innoscripta_task/lib/features/task_management/presentation/bloc/build/Debug/outDebug"
+//     }
+//   ]
+// }
+
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+      
+
+      {
+          "name": "innoscripta_task",
+          "request": "launch",
+          "type": "dart"
+      },
+      {
+          "name": "innoscripta_task (profile mode)",
+          "request": "launch",
+          "type": "dart",
+          "flutterMode": "profile"
+      },
+      {
+          "name": "innoscripta_task (release mode)",
+          "request": "launch",
+          "type": "dart",
+          "flutterMode": "release"
+      }
+  ]
+}
