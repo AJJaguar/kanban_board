@@ -13,7 +13,7 @@ https://user-images.githubusercontent.com/90194561/214649042-72b10bee-4c4e-42ea-
 
 ## Getting Started 🚀
 
-
+The project was optimized to run on an ipad in landscape mode
 To run the project either use the launch configuration in VSCode/Android Studio or use the following commands:
 
 ```sh
@@ -37,7 +37,7 @@ _\*Innoscripta works on iOS, Android, Web, and Windows._
 │     │     ├── repository(abstract)
 │     │     └── usecases
 │     └── presentation
-│     │     ├── cubit
+│     │     ├── bloc
 │     │     ├── pages
 │     │     └── widgets
 │     │        
@@ -48,7 +48,7 @@ _\*Innoscripta works on iOS, Android, Web, and Windows._
 To run all unit and widget tests use the following command:
 
 ```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
+$ flutter test 
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
@@ -130,11 +130,11 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 1. For each supported locale, add a new ARB file in `lib/l10n/arb`.
 
 ```
-├── src
+├── lib
 |     ├── l10n
-│     │     ├── arb
-│     │     │   ├── app_en.arb
-│     │     │   └── app_es.arb
+│     │     
+│     │     ├── app_en.arb
+│     │     └── app_es.arb
 ```
 
 2. Add the translated strings to each `.arb` file:
