@@ -177,6 +177,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.6.2"
+  cross_file:
+    dependency: transitive
+    description:
+      name: cross_file
+      sha256: f71079978789bc2fe78d79227f1f8cfe195b31bbd8db2399b0d15a4b96fb843b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.3+2"
   crypto:
     dependency: transitive
     description:
@@ -301,6 +309,11 @@ packages:
     version: "5.6.0"
   flutter_test:
     dependency: "direct dev"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -497,7 +510,7 @@ packages:
     source: hosted
     version: "1.8.2"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: dcea5feb97d8abf90cab9e9030b497fb7c3cbf26b7a1fe9e3ef7dcb0a1ddec95
@@ -544,6 +557,46 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      sha256: "33c6a1253d1f95fd06fa74b65b7ba907ae9811f9d5c1d3150e51417d04b8d6a8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.2.0"
+  permission_handler_android:
+    dependency: transitive
+    description:
+      name: permission_handler_android
+      sha256: "8028362b40c4a45298f1cbfccd227c8dd6caf0e27088a69f2ba2ab15464159e2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.2.0"
+  permission_handler_apple:
+    dependency: transitive
+    description:
+      name: permission_handler_apple
+      sha256: "9c370ef6a18b1c4b2f7f35944d644a56aa23576f23abee654cf73968de93f163"
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.0.7"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      sha256: "68abbc472002b5e6dfce47fe9898c6b7d8328d58b5d2524f75e277c07a97eb84"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.9.0"
+  permission_handler_windows:
+    dependency: transitive
+    description:
+      name: permission_handler_windows
+      sha256: f67cab14b4328574938ecea2db3475dad7af7ead6afab6338772c5f88963e38b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
   platform:
     dependency: transitive
     description:
@@ -600,6 +653,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
+  share_plus:
+    dependency: "direct main"
+    description:
+      name: share_plus
+      sha256: e387077716f80609bb979cd199331033326033ecd1c8f200a90c5f57b1c9f55e
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.3.0"
+  share_plus_platform_interface:
+    dependency: transitive
+    description:
+      name: share_plus_platform_interface
+      sha256: "82ddd4ab9260c295e6e39612d4ff00390b9a7a21f1bb1da771e2f232d80ab8a1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   shelf:
     dependency: transitive
     description:
@@ -757,6 +826,46 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  url_launcher_linux:
+    dependency: transitive
+    description:
+      name: url_launcher_linux
+      sha256: "318c42cba924e18180c029be69caf0a1a710191b9ec49bb42b5998fdcccee3cc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
+  url_launcher_platform_interface:
+    dependency: transitive
+    description:
+      name: url_launcher_platform_interface
+      sha256: "4eae912628763eb48fc214522e58e942fd16ce195407dbf45638239523c759a6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
+  url_launcher_web:
+    dependency: transitive
+    description:
+      name: url_launcher_web
+      sha256: "44d79408ce9f07052095ef1f9a693c258d6373dc3944249374e30eff7219ccb0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.14"
+  url_launcher_windows:
+    dependency: transitive
+    description:
+      name: url_launcher_windows
+      sha256: "387e227c4b979034cc52afb11d66b04ed9b288ca1f45beeef39b2ea69e714fa5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
+  uuid:
+    dependency: transitive
+    description:
+      name: uuid
+      sha256: "648e103079f7c64a36dc7d39369cabb358d377078a051d6ae2ad3aa539519313"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.7"
   vector_math:
     dependency: transitive
     description:

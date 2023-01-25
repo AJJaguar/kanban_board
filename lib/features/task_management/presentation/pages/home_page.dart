@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                     bottom: -75,
                     child: CircleAvatar(
                       radius: 150,
-                      backgroundColor: Colors.red.withOpacity(0.5),
+                      backgroundColor: Colors.grey.withOpacity(0.1),
                       child: DragTarget<TaskEntity>(
                         onAccept: (task) {
                           context.read<TaskBloc>().add(
@@ -208,6 +208,7 @@ class _HomePageState extends State<HomePage> {
               child: const Icon(
                 Icons.delete,
                 size: 55,
+                color: Colors.red,
               ),
             )
           ],
