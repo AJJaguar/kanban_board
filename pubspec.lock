@@ -718,10 +718,6 @@ packages:
       name: test_api
       sha256: ad540f65f92caa91bf21dfc8ffb8c589d6e4dc0c2267818b4cc2792857706206
       url: "https://pub.dev"
-<<<<<<< Updated upstream
-    source: hosted
-    version: "0.4.16"
-=======
     source: hosted
     version: "0.4.16"
   test_core:
@@ -732,7 +728,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.20"
->>>>>>> Stashed changes
   timing:
     dependency: transitive
     description:
@@ -822,9 +817,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-<<<<<<< Updated upstream
-  dart: ">=2.18.6 <4.0.0"
-=======
   dart: ">=2.18.0 <4.0.0"
->>>>>>> Stashed changes
   flutter: ">=3.0.0"
