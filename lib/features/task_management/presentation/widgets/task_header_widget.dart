@@ -29,7 +29,7 @@ class TaskClass extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: AppTextStyle.taskHeader,
+            style: AppTextStyle.taskClass,
           ),
           Expanded(child: child),
         ],
