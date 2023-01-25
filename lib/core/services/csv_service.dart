@@ -33,7 +33,6 @@ class CSVServiceImpl implements CSVService {
       final csv = const ListToCsvConverter().convert(tasksList);
 
       await file.writeAsString(csv);
-      print(file.path);
       return file.path;
     }
     return null;

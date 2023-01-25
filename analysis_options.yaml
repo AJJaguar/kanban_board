@@ -5,3 +5,4 @@ linter:
     public_member_api_docs: false
     sort_pub_dependencies: false
     cascade_invocations: false
+    noop_primitive_operations: false

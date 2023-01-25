@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:innoscripta_task/common/app_text_styles.dart';
 import 'package:innoscripta_task/core/bloc/local_bloc/localization_bloc.dart';
 import 'package:innoscripta_task/core/services/csv_service.dart';
 import 'package:innoscripta_task/di/locator.dart';
@@ -58,28 +59,10 @@ class _Dashboard extends State<Dashboard> {
                 child: Scaffold(
                   appBar: AppBar(
                     backgroundColor: Colors.black,
-                    title: Text(local.dashboard),
-                    leading: DropdownButton<Language>(
-                      isExpanded: true,
-                      onChanged: (Language? language) {
-                        context.read<LocalizationBloc>().add(
-                              ChangeLocalizationEvent(
-                                language?.languageCode ?? 'en',
-                              ),
-                            );
-                      },
-                      icon: const Icon(
-                        Icons.language,
-                        color: Colors.white,
-                      ),
-                      items: Language.languageList()
-                          .map<DropdownMenuItem<Language>>(
-                            (e) => DropdownMenuItem<Language>(
-                              value: e,
-                              child: Text(e.name),
-                            ),
-                          )
-                          .toList(),
+                    centerTitle: true,
+                    title: Text(
+                      local.dashboard,
+                      style: AppTextStyle.taskClass.copyWith(fontSize: 28),
                     ),
                     actions: [
                       IconButton(
@@ -90,6 +73,27 @@ class _Dashboard extends State<Dashboard> {
                           Icons.download,
                           color: Colors.white,
                         ),
+                      ),
+                      DropdownButton<Language>(
+                        onChanged: (Language? language) {
+                          context.read<LocalizationBloc>().add(
+                                ChangeLocalizationEvent(
+                                  language?.languageCode ?? 'en',
+                                ),
+                              );
+                        },
+                        icon: const Icon(
+                          Icons.language,
+                          color: Colors.white,
+                        ),
+                        items: Language.languageList()
+                            .map<DropdownMenuItem<Language>>(
+                              (e) => DropdownMenuItem<Language>(
+                                value: e,
+                                child: Text(e.name),
+                              ),
+                            )
+                            .toList(),
                       ),
                     ],
                   ),

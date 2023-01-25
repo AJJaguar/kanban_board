@@ -6,7 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/update_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
 import 'package:innoscripta_task/features/task_management/presentation/bloc/task_bloc.dart';
-import 'package:innoscripta_task/features/task_management/presentation/widgets/task_header_widget.dart';
+import 'package:innoscripta_task/features/task_management/presentation/widgets/task_class_widget.dart';
 import 'package:innoscripta_task/features/task_management/presentation/widgets/tasktile.dart';
 
 class HistoryPage extends StatelessWidget {
@@ -14,14 +14,16 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+
     return SafeArea(
       child: Scaffold(
         body: BlocConsumer<TaskBloc, TaskState>(
           listener: (context, state) {},
           builder: (context, state) {
             return Center(
-              child: TaskHeader(
-                title: AppLocalizations.of(context)!.completedtasks,
+              child: TaskClass(
+                title: local.completedtasks,
                 child: Builder(
                   builder: (context) {
                     final doneTasks = state.tasks
