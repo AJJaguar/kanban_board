@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/common/app_focus_remover.dart';
@@ -8,6 +9,13 @@ import 'package:innoscripta_task/di/locator.dart';
 import 'package:innoscripta_task/features/task_management/presentation/pages/dashboard.dart';
 
 void main() async {
+  // Step 2
+  WidgetsFlutterBinding.ensureInitialized();
+  // Step 3
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]).then((value) => runApp(const MyApp()));
   setupLocator();
 
   runApp(const MyApp());

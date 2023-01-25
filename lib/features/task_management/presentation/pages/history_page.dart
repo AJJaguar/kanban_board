@@ -43,7 +43,7 @@ class HistoryPage extends StatelessWidget {
                               timer: 'TIME SPENT\n'
                                   '${_convertSecondsToTimeString(task.seconds)}\n\n'
                                   'COMPLETED AT\n'
-                                  '${task.completedAt.toString()}',
+                                  '${task.completedAt.toString}',
                               status: task.status,
                               onTick: () {
                                 context.read<TaskBloc>().add(
