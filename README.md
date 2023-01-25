@@ -4,11 +4,6 @@
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-
-
-
-
-
 ---
 
 ## Getting Started 🚀
@@ -101,7 +96,8 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 3. Use the new string
 
 ```dart
-import 'innoscripta_takehome/l10n/l10n.dart';
+
+import 'package:innoscipta_takehome/l10n/l10n.dart';
 
 @override
 Widget build(BuildContext context) {
