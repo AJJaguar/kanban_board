@@ -6,11 +6,15 @@
 
 ---
 
+https://user-images.githubusercontent.com/90194561/214649042-72b10bee-4c4e-42ea-9194-0121b8ddba32.mov
+
+
+
+
 ## Getting Started 🚀
 
 
-The project was optimized to run on an ipad in landscape mode
-To run the project either use the launch configuration in VSCode/Android Studio or use the following commands.
+To run the project either use the launch configuration in VSCode/Android Studio or use the following commands:
 
 ```sh
 $ flutter run 
@@ -33,7 +37,7 @@ _\*Innoscripta works on iOS, Android, Web, and Windows._
 │     │     ├── repository(abstract)
 │     │     └── usecases
 │     └── presentation
-│     │     ├── bloc
+│     │     ├── cubit
 │     │     ├── pages
 │     │     └── widgets
 │     │        
@@ -44,7 +48,7 @@ _\*Innoscripta works on iOS, Android, Web, and Windows._
 To run all unit and widget tests use the following command:
 
 ```sh
-$ flutter testß
+$ flutter test --coverage --test-randomize-ordering-seed random
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
@@ -96,7 +100,6 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 3. Use the new string
 
 ```dart
-
 import 'package:innoscipta_takehome/l10n/l10n.dart';
 
 @override
