@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:innoscripta_task/core/services/csv_service.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/add_task_param.dart';
@@ -111,7 +110,5 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     Emitter<TaskState> emit,
   ) async {
     await _csvService.saveTaskAsCSV(state.tasks);
-
-    //ToDo implement CSV Download
   }
 }

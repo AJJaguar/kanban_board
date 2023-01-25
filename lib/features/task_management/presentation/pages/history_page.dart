@@ -14,14 +14,16 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+
     return SafeArea(
       child: Scaffold(
         body: BlocConsumer<TaskBloc, TaskState>(
           listener: (context, state) {},
           builder: (context, state) {
             return Center(
-              child: TaskHeader(
-                title: AppLocalizations.of(context)!.completedtasks,
+              child: TaskClass(
+                title: local.completedtasks,
                 child: Builder(
                   builder: (context) {
                     final doneTasks = state.tasks
@@ -41,7 +43,7 @@ class HistoryPage extends StatelessWidget {
                               timer: 'TIME SPENT\n'
                                   '${_convertSecondsToTimeString(task.seconds)}\n\n'
                                   'COMPLETED AT\n'
-                                  '${task.completedAt.toString()}',
+                                  '${task.completedAt.toString}',
                               status: task.status,
                               onTick: () {
                                 context.read<TaskBloc>().add(

@@ -44,29 +44,8 @@ class _Dashboard extends State<Dashboard> {
               child: Scaffold(
                 appBar: AppBar(
                   backgroundColor: Colors.black,
+                  centerTitle: true,
                   title: Text(local.dashboard),
-                  leading: DropdownButton<Language>(
-                    isExpanded: true,
-                    onChanged: (Language? language) {
-                      context.read<LocalizationBloc>().add(
-                            ChangeLocalizationEvent(
-                              language?.languageCode ?? 'en',
-                            ),
-                          );
-                    },
-                    icon: const Icon(
-                      Icons.language,
-                      color: Colors.white,
-                    ),
-                    items: Language.languageList()
-                        .map<DropdownMenuItem<Language>>(
-                          (e) => DropdownMenuItem<Language>(
-                            value: e,
-                            child: Text(e.name),
-                          ),
-                        )
-                        .toList(),
-                  ),
                   actions: [
                     IconButton(
                       onPressed: () => context.read<TaskBloc>().add(
@@ -75,6 +54,29 @@ class _Dashboard extends State<Dashboard> {
                       icon: const Icon(
                         Icons.download,
                         color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      child: DropdownButton<Language>(
+                        onChanged: (Language? language) {
+                          context.read<LocalizationBloc>().add(
+                                ChangeLocalizationEvent(
+                                  language?.languageCode ?? 'en',
+                                ),
+                              );
+                        },
+                        icon: const Icon(
+                          Icons.language,
+                          color: Colors.white,
+                        ),
+                        items: Language.languageList()
+                            .map<DropdownMenuItem<Language>>(
+                              (e) => DropdownMenuItem<Language>(
+                                value: e,
+                                child: Text(e.name),
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
                   ],

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:innoscripta_task/common/app_colors.dart';
+import 'package:innoscripta_task/common/app_text_styles.dart';
 
-class TaskHeader extends StatelessWidget {
-  const TaskHeader({
+class TaskClass extends StatelessWidget {
+  const TaskClass({
     super.key,
     required this.title,
     required this.child,
@@ -28,11 +29,7 @@ class TaskHeader extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 37,
-              fontWeight: FontWeight.w700,
-            ),
+            style: AppTextStyle.taskHeader,
           ),
           Expanded(child: child),
         ],

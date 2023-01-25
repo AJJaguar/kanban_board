@@ -20,6 +20,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+
     return BlocConsumer<TaskBloc, TaskState>(
       listener: (context, state) {
         if (state is TaskAdded) {
@@ -37,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /// TOdO -------->>>>>>>>>>
+                /// TODOS -------->>>>>>>>>>
                 Expanded(
                   child: DragTarget<TaskEntity>(
                     onAccept: (task) {
@@ -52,8 +54,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                     },
-                    builder: (context, _, __) => TaskHeader(
-                      title: AppLocalizations.of(context)!.todo,
+                    builder: (context, _, __) => TaskClass(
+                      title: local.todo,
                       child: Builder(
                         builder: (context) {
                           final todoTasks = state.tasks
@@ -99,8 +101,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                     },
-                    builder: (context, _, __) => TaskHeader(
-                      title: AppLocalizations.of(context)!.inprogress,
+                    builder: (context, _, __) => TaskClass(
+                      title: local.inprogress,
                       child: Builder(
                         builder: (context) {
                           final inProgressTasks = state.tasks
@@ -146,8 +148,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                     },
-                    builder: (context, _, __) => TaskHeader(
-                      title: AppLocalizations.of(context)!.done,
+                    builder: (context, _, __) => TaskClass(
+                      title: local.done,
                       child: Builder(
                         builder: (context) {
                           final doneTasks = state.tasks
