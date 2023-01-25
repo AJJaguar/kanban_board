@@ -32,5 +32,10 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
+  ],
+  "cSpell.words": [
+    "innoscripta",
+    "usecase",
+    "usecases"
   ]
 }

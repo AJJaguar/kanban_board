@@ -53,7 +53,7 @@ class _TaskTileState extends State<TaskTile> {
         borderRadius: BorderRadius.circular(8),
         color: _getColorFromStatus,
       ),
-      duration: Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 1000),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,

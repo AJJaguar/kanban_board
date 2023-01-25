@@ -1,23 +1,37 @@
 part of 'task_bloc.dart';
 
-abstract class TaskEvent {}
+abstract class TaskEvent extends Equatable {
+  const TaskEvent();
+}
 
 class AddTaskEvent extends TaskEvent {
-  AddTaskEvent({required this.param});
+  const AddTaskEvent({required this.param});
   final AddTaskParam param;
+  
+  @override
+  List<Object?> get props => [param];
 }
 
 class GetTasksByStatusEvent extends TaskEvent {
-  GetTasksByStatusEvent({this.param});
+  const GetTasksByStatusEvent({this.param});
   final GetTasksParam? param;
+  
+  @override
+  List<Object?> get props => [param];
 }
 
 class UpdateTaskEvent extends TaskEvent {
-  UpdateTaskEvent({required this.param});
+  const UpdateTaskEvent({required this.param});
   final UpdateTaskParam param;
+  
+  @override
+  List<Object?> get props => [param];
 }
 
 class DeleteTaskEvent extends TaskEvent {
-  DeleteTaskEvent({required this.param});
+  const DeleteTaskEvent({required this.param});
   final DeleteTaskParam param;
+
+  @override
+  List<Object?> get props => [param];
 }

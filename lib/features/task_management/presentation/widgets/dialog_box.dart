@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:innoscripta_task/features/task_management/params/add_task_param.dart';
+import 'package:innoscripta_task/features/task_management/domain/entities/params/add_task_param.dart';
 import 'package:innoscripta_task/features/task_management/presentation/bloc/task_bloc.dart';
 import 'package:innoscripta_task/features/task_management/presentation/widgets/app_button.dart';
 import 'package:innoscripta_task/features/task_management/presentation/widgets/app_textfield.dart';

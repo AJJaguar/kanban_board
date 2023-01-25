@@ -1,7 +1,9 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:innoscripta_task/features/task_management/domain/entities/params/update_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
-import 'package:innoscripta_task/features/task_management/params/update_task_param.dart';
 import 'package:innoscripta_task/features/task_management/presentation/bloc/task_bloc.dart';
 import 'package:innoscripta_task/features/task_management/presentation/widgets/task_header_widget.dart';
 import 'package:innoscripta_task/features/task_management/presentation/widgets/tasktile.dart';

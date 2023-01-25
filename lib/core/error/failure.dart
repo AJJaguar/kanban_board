@@ -1,9 +1,14 @@
-abstract class Failure {
-  Failure(this.message);
+import 'package:equatable/equatable.dart';
+
+abstract class Failure extends Equatable {
+  const Failure(this.message);
 
   final String message;
 }
 
 class TaskFailure extends Failure {
-  TaskFailure(super.message);
+  const TaskFailure(super.message);
+  
+  @override
+  List<Object?> get props => [super.message];
 }

@@ -34,7 +34,7 @@ class _Dashboard extends State<Dashboard> {
           locator<UpdateTaskUseCase>(),
           locator<DeleteTaskUseCase>(),
         )..add(
-            GetTasksByStatusEvent(),
+            const GetTasksByStatusEvent(),
           ),
         child: Builder(
           builder: (context) {
