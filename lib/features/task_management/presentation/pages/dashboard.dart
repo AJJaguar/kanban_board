@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/di/locator.dart';
-
+import 'package:innoscripta_task/features/task_management/data/models/language_model.dart';
 import 'package:innoscripta_task/features/task_management/domain/usecases/add_task_usecase.dart';
 import 'package:innoscripta_task/features/task_management/domain/usecases/delete_task_use_case.dart';
 import 'package:innoscripta_task/features/task_management/domain/usecases/get_tasks_by_status_usecase.dart';
 import 'package:innoscripta_task/features/task_management/domain/usecases/update_task_use_case.dart';
-
 import 'package:innoscripta_task/features/task_management/presentation/bloc/task_bloc.dart';
 import 'package:innoscripta_task/features/task_management/presentation/pages/history_page.dart';
 import 'package:innoscripta_task/features/task_management/presentation/pages/home_page.dart';
@@ -40,6 +39,26 @@ class _Dashboard extends State<Dashboard> {
           builder: (context) {
             return SafeArea(
               child: Scaffold(
+                appBar: AppBar(
+                  title: Text(AppLocalizations.of(context)!.dashboard),
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: DropdownButton<Language>(
+                        onChanged: (Language? language) {},
+                        icon: const Icon(Icons.language),
+                        items: Language.languageList()
+                            .map<DropdownMenuItem<Language>>(
+                              (e) => DropdownMenuItem<Language>(
+                                value: e,
+                                child: Text(e.name),
+                              ),
+                            )
+                            .toList(),
+                      ),
+                    ),
+                  ],
+                ),
                 body: const TabBarView(
                   children: [
                     HomePage(),
@@ -65,17 +84,17 @@ class _Dashboard extends State<Dashboard> {
                     size: 40,
                   ),
                 ),
-                bottomNavigationBar: const TabBar(
+                bottomNavigationBar: TabBar(
                   indicatorWeight: 1,
                   indicatorSize: TabBarIndicatorSize.label,
                   tabs: [
                     Tab(
-                      icon: Icon(Icons.home),
-                      text: 'Home',
+                      icon: const Icon(Icons.home),
+                      text: AppLocalizations.of(context)!.home,
                     ),
                     Tab(
-                      icon: Icon(Icons.history),
-                      text: 'History',
+                      icon: const Icon(Icons.history),
+                      text: AppLocalizations.of(context)!.history,
                     ),
                   ],
                 ),

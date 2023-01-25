@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/update_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
 import 'package:innoscripta_task/features/task_management/presentation/bloc/task_bloc.dart';
@@ -20,7 +21,7 @@ class HistoryPage extends StatelessWidget {
           builder: (context, state) {
             return Center(
               child: TaskHeader(
-                title: 'Completed Tasks',
+                title: AppLocalizations.of(context)!.completedtasks,
                 child: Builder(
                   builder: (context) {
                     final doneTasks = state.tasks

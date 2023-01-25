@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/delete_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/update_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                           );
                     },
                     builder: (context, _, __) => TaskHeader(
-                      title: 'Todo',
+                      title: AppLocalizations.of(context)!.todo,
                       child: Builder(
                         builder: (context) {
                           final todoTasks = state.tasks
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                           );
                     },
                     builder: (context, _, __) => TaskHeader(
-                      title: 'In Progress',
+                      title: AppLocalizations.of(context)!.inprogress,
                       child: Builder(
                         builder: (context) {
                           final inProgressTasks = state.tasks
@@ -146,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                           );
                     },
                     builder: (context, _, __) => TaskHeader(
-                      title: 'Done',
+                      title: AppLocalizations.of(context)!.done,
                       child: Builder(
                         builder: (context) {
                           final doneTasks = state.tasks

@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:innoscripta_task/common/app_focus_remover.dart';
 import 'package:innoscripta_task/common/app_routes.dart';
 import 'package:innoscripta_task/di/locator.dart';
 import 'package:innoscripta_task/features/task_management/presentation/pages/dashboard.dart';
 
 void main() async {
-  // init the hive
-  await Hive.initFlutter();
-
-  // open the box
-  // var box = await Hive.openBox('mybox');
-
   setupLocator();
 
   runApp(const MyApp());
@@ -40,6 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         // initialRoute: Dashboard.route,
         home: const Dashboard(),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: const Locale('tr'),
       ),
     );
   }

@@ -1,0 +1,9 @@
+{
+"todo": "Todo",
+"inprogress": "In Progress",
+"done": "Done",
+"dashboard": "Dashboard",
+"home": "Home",
+"history": "History",
+"completedtasks": "Completed Tasks"
+}
