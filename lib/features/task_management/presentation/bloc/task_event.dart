@@ -7,7 +7,7 @@ abstract class TaskEvent extends Equatable {
 class AddTaskEvent extends TaskEvent {
   const AddTaskEvent({required this.param});
   final AddTaskParam param;
-  
+
   @override
   List<Object?> get props => [param];
 }
@@ -15,7 +15,7 @@ class AddTaskEvent extends TaskEvent {
 class GetTasksByStatusEvent extends TaskEvent {
   const GetTasksByStatusEvent({this.param});
   final GetTasksParam? param;
-  
+
   @override
   List<Object?> get props => [param];
 }
@@ -23,7 +23,7 @@ class GetTasksByStatusEvent extends TaskEvent {
 class UpdateTaskEvent extends TaskEvent {
   const UpdateTaskEvent({required this.param});
   final UpdateTaskParam param;
-  
+
   @override
   List<Object?> get props => [param];
 }
@@ -34,4 +34,11 @@ class DeleteTaskEvent extends TaskEvent {
 
   @override
   List<Object?> get props => [param];
+}
+
+class DownloadTaskEvent extends TaskEvent {
+  const DownloadTaskEvent();
+
+  @override
+  List<Object?> get props => [];
 }

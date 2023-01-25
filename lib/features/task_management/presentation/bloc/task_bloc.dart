@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:innoscripta_task/core/services/csv_service.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/add_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/delete_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/get_tasks_param.dart';
@@ -19,19 +22,25 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     this._getTaskUseCase,
     this._updateTaskUseCase,
     this._deleteTaskUseCase,
+    this._csvService,
   ) : super(const TaskInitial()) {
     on<AddTaskEvent>(_onAddTaskEvent);
     on<GetTasksByStatusEvent>(_onGetTasksEvent);
     on<UpdateTaskEvent>(_onUpdateTaskEvent);
     on<DeleteTaskEvent>(_onDeleteTaskEvent);
+    on<DownloadTaskEvent>(_onDownloadTaskEvent);
   }
 
   final AddTaskUseCase _addTaskUseCase;
   final GetTasksByStatusUseCase _getTaskUseCase;
   final UpdateTaskUseCase _updateTaskUseCase;
   final DeleteTaskUseCase _deleteTaskUseCase;
+  final CSVService _csvService;
 
-  void _onAddTaskEvent(AddTaskEvent event, Emitter<TaskState> emit) {
+  FutureOr<void> _onAddTaskEvent(
+    AddTaskEvent event,
+    Emitter<TaskState> emit,
+  ) {
     emit(const TaskLoading());
     _addTaskUseCase(event.param).then(
       (value) => value.fold(
@@ -45,7 +54,10 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     );
   }
 
-  void _onGetTasksEvent(GetTasksByStatusEvent event, Emitter<TaskState> emit) {
+  FutureOr<void> _onGetTasksEvent(
+    GetTasksByStatusEvent event,
+    Emitter<TaskState> emit,
+  ) {
     emit(const TaskLoading());
     _getTaskUseCase(event.param).then(
       (value) => value.fold(
@@ -59,7 +71,10 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     );
   }
 
-  void _onUpdateTaskEvent(UpdateTaskEvent event, Emitter<TaskState> emit) {
+  FutureOr<void> _onUpdateTaskEvent(
+    UpdateTaskEvent event,
+    Emitter<TaskState> emit,
+  ) {
     emit(const TaskLoading());
     _updateTaskUseCase(event.param).then(
       (value) => value.fold(
@@ -73,7 +88,10 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     );
   }
 
-  void _onDeleteTaskEvent(DeleteTaskEvent event, Emitter<TaskState> emit) {
+  FutureOr<void> _onDeleteTaskEvent(
+    DeleteTaskEvent event,
+    Emitter<TaskState> emit,
+  ) {
     emit(const TaskLoading());
     _deleteTaskUseCase(event.param).then(
       (value) => value.fold(
@@ -85,5 +103,14 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
         ),
       ),
     );
+  }
+
+  FutureOr<void> _onDownloadTaskEvent(
+    DownloadTaskEvent event,
+    Emitter<TaskState> emit,
+  ) async {
+    await _csvService.saveTaskAsCSV(state.tasks);
+
+    //ToDo implement CSV Download
   }
 }

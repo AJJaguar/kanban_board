@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:innoscripta_task/core/error/failure.dart';
+import 'package:innoscripta_task/core/services/csv_service.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/params/add_task_param.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
 import 'package:innoscripta_task/features/task_management/domain/usecases/add_task_usecase.dart';
@@ -20,17 +21,21 @@ class GetTasksByStatusUseCaseMock extends Mock
 
 class DeleteTaskUseCaseMock extends Mock implements DeleteTaskUseCase {}
 
+class CSVServiceMock extends Mock implements CSVService {}
+
 void main() {
   late AddTaskUseCase addTaskUseCase;
   late UpdateTaskUseCase updateTaskUseCase;
   late GetTasksByStatusUseCase getTasksByStatusUseCase;
   late DeleteTaskUseCase deleteTaskUseCase;
+  late CSVService csvService;
 
   setUpAll(() {
     addTaskUseCase = AddTaskUseCaseMock();
     updateTaskUseCase = UpdateTaskUseCaseMock();
     deleteTaskUseCase = DeleteTaskUseCaseMock();
     getTasksByStatusUseCase = GetTasksByStatusUseCaseMock();
+    csvService = CSVServiceMock();
   });
   group(
     'task bloc ...',
@@ -41,6 +46,7 @@ void main() {
           getTasksByStatusUseCase,
           updateTaskUseCase,
           deleteTaskUseCase,
+          csvService,
         );
         expect(taskBloc.state, const TaskInitial());
         taskBloc.close();
@@ -63,6 +69,7 @@ void main() {
             getTasksByStatusUseCase,
             updateTaskUseCase,
             deleteTaskUseCase,
+            csvService,
           )..add(
               const AddTaskEvent(
                 param: AddTaskParam(
@@ -97,6 +104,7 @@ void main() {
             getTasksByStatusUseCase,
             updateTaskUseCase,
             deleteTaskUseCase,
+            csvService,
           )..add(
               const AddTaskEvent(
                 param: AddTaskParam(

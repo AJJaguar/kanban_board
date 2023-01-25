@@ -1,4 +1,6 @@
+import 'package:csv/csv.dart';
 import 'package:get_it/get_it.dart';
+import 'package:innoscripta_task/core/services/csv_service.dart';
 import 'package:innoscripta_task/core/services/task_storage_service.dart';
 import 'package:innoscripta_task/features/task_management/data/datasources/task_data_source.dart';
 import 'package:innoscripta_task/features/task_management/data/repositories/task_repository_impl.dart';
@@ -19,6 +21,11 @@ void setupLocator() {
     ..registerLazySingleton<TaskRepository>(
       () => TaskRepositoryImpl(
         locator(),
+      ),
+    )
+    ..registerLazySingleton<CSVService>(
+      () => const CSVServiceImpl(
+        ListToCsvConverter(),
       ),
     )
     ..registerLazySingleton<TaskDataSource>(

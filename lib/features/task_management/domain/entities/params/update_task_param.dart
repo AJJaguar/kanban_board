@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:innoscripta_task/features/task_management/domain/entities/task_entity.dart';
 
 class UpdateTaskParam extends Equatable {
-  UpdateTaskParam({required this.oldTask, required this.newTask});
+  const UpdateTaskParam({required this.oldTask, required this.newTask});
 
   final TaskEntity oldTask;
   final TaskEntity newTask;
@@ -12,7 +12,6 @@ class UpdateTaskParam extends Equatable {
       };
 
   @override
-  // TODO: implement props
   List<Object?> get props => [
         oldTask,
         newTask,

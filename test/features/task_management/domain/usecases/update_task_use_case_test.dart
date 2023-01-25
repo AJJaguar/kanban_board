@@ -28,7 +28,7 @@ void main() {
       // arrange
       when(
         () => taskRepositoryMock.updateTask(
-          UpdateTaskParam(
+          const UpdateTaskParam(
             oldTask: task,
             newTask: task,
           ),
@@ -39,7 +39,7 @@ void main() {
 
       // Act
       await useCase(
-        UpdateTaskParam(
+        const UpdateTaskParam(
           oldTask: task,
           newTask: task,
         ),
@@ -48,7 +48,7 @@ void main() {
       // Assert
       verify(
         () => taskRepositoryMock.updateTask(
-          UpdateTaskParam(
+          const UpdateTaskParam(
             oldTask: task,
             newTask: task,
           ),
