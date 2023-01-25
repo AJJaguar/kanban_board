@@ -31,3 +31,12 @@ class TaskAdded extends TaskState {
 class TaskDeleted extends TaskState {
   const TaskDeleted({super.tasks});
 }
+
+class TaskDownloading extends TaskState {
+  const TaskDownloading({super.tasks});
+}
+
+class TaskDownloaded extends TaskState {
+  const TaskDownloaded({super.tasks, required this.filePath});
+  final String? filePath;
+}
